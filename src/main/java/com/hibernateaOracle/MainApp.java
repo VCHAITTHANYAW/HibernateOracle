@@ -13,21 +13,26 @@ public class MainApp {
 		Session session =sessionFactory.openSession();
 		Transaction transaction = session.beginTransaction();
 		PersonAddress personAddress = new PersonAddress();
-		personAddress.setAddressId("123");
-		personAddress.setPersonId("124");
+		personAddress.setAddressId("flat no:4");
+		personAddress.setPersonId("5689");
 		
 		Person person = new Person();
-		person.setPersonId(12);
-		person.setFirstName("teegala");
-		person.setLastName("gangareddy");
+		person.setPersonId(256);
+		person.setFirstName("V");
+		person.setLastName("CHAITTHANYAW");
+		Person person1 = new Person();
+		person1.setPersonId(257);
+		person1.setFirstName("java");
+		person1.setLastName("prog");
 		
 		Address address = new Address();
-		address.setAddressId("123");
+		address.setAddressId("flat no:4");
 		address.setCity("hyderabad");
-        address.setTown("kompally");
+        address.setTown("MOTINAGAR");
         
         session.save(personAddress);
         session.save(person);
+        session.save(person1);
         session.save(address);
         transaction.commit();
         session.close();
